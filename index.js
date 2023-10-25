@@ -1,53 +1,38 @@
-const { Circle, Square, Triangle} = require('./lib/shape')
-
+const { Shape, Circle, Square, Triangle } = require('./lib/shape')
 const inquirer = require('inquirer');
-
 const fs = require('fs');
 // const svgTemplate = require('./lib/shape'); // You'll need to create this file with the SVG template
 
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
-
-
-
 const questions = [
-
-{
-type: 'input',
-name: 'text',
-message: 'Please enter text, that can only be 3 Characters long',
-validate: function(input) {
-    if(input.length > 3) {
+  {
+    type: 'input',
+    name: 'text',
+    message: 'Please enter text, that can only be 3 Characters long',
+    validate: function (input) {
+      if (input.length > 3) {
 
         return false;
+      }
+      else { return true }
     }
-    else {return true}
-}
-},
-
-{
-type: 'input',
-name: 'textColor',
-message: 'Please enter desired text color (Enter color name or hexadecimal value)'
-},
-{
-type: 'input',
-name: 'backgroundColor',
-message: 'Please enter desired background color (Enter color name or hexadecimal value)',
-},
-{
-type: 'list',
-name: 'shapes',
-message: 'Please select desired shape',
-choices: ['circle', 'triangle', 'square',]
-},
-
+  },
+  {
+    type: 'input',
+    name: 'textColor',
+    message: 'Please enter desired text color (Enter color name or hexadecimal value)'
+  },
+  {
+    type: 'input',
+    name: 'backgroundColor',
+    message: 'Please enter desired background color (Enter color name or hexadecimal value)',
+  },
+  {
+    type: 'list',
+    name: 'shapes',
+    message: 'Please select desired shape',
+    choices: ['circle', 'triangle', 'square',]
+  },
 ];
-
-
-
 
 function getUserInput(question) {
   return new Promise((resolve) => {
@@ -80,63 +65,35 @@ async function generateLogo() {
 
 // generateLogo();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function init () {
-    inquirer
-.prompt(questions)
-.then(answers => { console.log(answers)
-let requestedShape;
-    //call 
-    switch(answers.shapes) {
-
-        case "square" :
-            requestedShape = new Square (answers.text, answers.textColor, answers.backgroundColor);
-            break;
-        case "circle" :
-            requestedShape = new Circle (answers.text, answers.textColor, answers.backgroundColor);
-            break;
-        default :
-            requestedShape = new Triangle (answers.text, answers.textColor, answers.backgroundColor);
-            break;
-
-    }
-let newSVG = requestedShape.getSVG();
-fs.writeFile('logo.svg', newSVG, (err) => {
-    if (err) throw err;
-    console.log('Generated logo.svg');
-    // rl.close();
-  });
-
-})
-.catch(error => {
-console.log(error);
-
-
-})
+function init() {
+  inquirer
+    .prompt(questions)
+    .then(answers => {
+      console.log(answers)
+      let requestedShape;
+      
+      switch (answers.shapes) {
+        case "square":
+          requestedShape = new Square(answers.text, answers.textColor, answers.backgroundColor);
+          break;
+        case "circle":
+          requestedShape = new Circle(answers.text, answers.textColor, answers.backgroundColor);
+          break;
+        default:
+          requestedShape = new Triangle(answers.text, answers.textColor, answers.backgroundColor);
+          break;
+      }
+      // requestedShape is either going to be a triangle, circle, or square
+      //console.log(requestedShape.getText(), requestedShape.getTextColor(), requestedShape.getBackgroundColor())
+      let newSVG = requestedShape.render();
+      fs.writeFile('logo.svg', newSVG, (err) => {
+        if (err) throw err;
+        console.log('Generated logo.svg');
+      });
+    })
+    .catch(error => {
+      console.log(error);
+    })
 }
 
-init ();
+init();

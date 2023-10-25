@@ -1,0 +1,6 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width = "300" height = "200">
+<circle cx="150" cy="125" r="75" fill="black" />
+<text x="49%" y="60%" alignment-baseline="middle" text-anchor="middle" font-size="48" fill="red">AMA</text>
+</svg>
+        

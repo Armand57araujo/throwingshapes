@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width = "300" height = "200">
+        <polygon points= "150,10 10,210 300,210"  r="75" fill="red" />
+        <text x="50%" y="60%" alignment-baseline="middle" text-anchor="middle" font-size="60" fill="white">AMA</text>
+    </svg>
+    
