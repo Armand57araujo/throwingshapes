@@ -8,7 +8,7 @@
 | Node | [https://developer.mozilla.org/en-US/docs/Glossary/Node.js](https://developer.mozilla.org/en-US/docs/Glossary/Node.js) | 
 
 ## Description 
-In this project I created a weather web application displaying a 5 day forecast for a given city with the ability to recall past searches for display from local storage.
+In this project I created a SVG Logo generator command line application using node.js, that generates three shapes -circle, square, triangle - and offers a varity of colors to select from. 
 
 [Walkthrough Video](https://watch.screencastify.com/v/kGI1kGkYpazleTL4O8y9)
 
