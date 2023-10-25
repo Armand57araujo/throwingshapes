@@ -10,10 +10,7 @@
 ## Description 
 In this project I created a weather web application displaying a 5 day forecast for a given city with the ability to recall past searches for display from local storage.
 
-
-[Visit the Deployed Site]((https://armand57araujo.github.io/weather-wizard/)
-
-![Walkthrough Video](https://watch.screencastify.com/v/kGI1kGkYpazleTL4O8y9)
+[Walkthrough Video](https://watch.screencastify.com/v/kGI1kGkYpazleTL4O8y9)
 
 
 ## Code Example 
