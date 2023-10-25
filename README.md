@@ -13,7 +13,7 @@ In this project I created a weather web application displaying a 5 day forecast 
 
 [Visit the Deployed Site]((https://armand57araujo.github.io/weather-wizard/)
 
-![Walkthrough Video]()
+![Walkthrough Video](https://watch.screencastify.com/v/kGI1kGkYpazleTL4O8y9)
 
 
 ## Code Example 
